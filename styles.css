@@ -1,0 +1,55 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.title {
+  color: cyan;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#ounaniInfo {
+  margin-top: 20px;
+}
+
+#ounaniImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+#commentsSection {
+  margin-top: 40px;
+}
+
+#commentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#commentForm input,
+#commentForm textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1em;
+}
+
+#commentsList {
+  margin-top: 20px;
+}

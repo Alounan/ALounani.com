@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Al Ounani – Gmala Power Course</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    h1, h2, h3 {
+      color: #00ffff; /* Cyan titles */
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Login/Signup Styles */
+    .auth-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 5rem;
+    }
+
+    .auth-box {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .auth-box h2 {
+      text-align: center;
+    }
+
+    .auth-box input {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .auth-box button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .auth-box button:hover {
+      background-color: #00cccc;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .main-content img {
+      margin-top: 20px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 0 20px #333;
+    }
+
+    .button-group {
+      margin-top: 2rem;
+    }
+
+    .button-group button {
+      margin: 0 1rem;
+      padding: 12px 24px;
+      font-size: 18px;
+      color: #fff;
+      background-color: transparent;
+      border: 2px solid #00ffff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #00ffff;
+      color: #000;
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .info-section {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      border-left: 5px solid #00ffff;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    /* Comment Section Styles */
+    .comment-section {
+      margin-top: 3rem;
+      text-align: left;
+    }
+
+    .comment-section h3 {
+      margin-bottom: 1rem;
+    }
+
+    .comment-box {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 1rem;
+    }
+
+    .comment-button {
+      padding: 0.5rem 1rem;
+      background-color: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .comment-button:hover {
+      background-color: #00cccc;
+    }
+
+    .comments-display {
+      margin-top: 1rem;
+      background-color: #111;
+      padding: 1rem;
+      border-radius: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .comment {
+      border-bottom: 1px solid #333;
+      padding: 0.5rem 0;
+    }
+
+    .comment:last-child {
+      border-bottom: none;
+    }
+
+    .comment strong {
+      color: #00ffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Login/Signup Section -->
+    <div class="auth-container" id="auth-container">
+      <div class="auth-box">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="handleLogin()">Login</button>
+      </div>
+      <div class="auth-box">
+        <h2>Signup</h2>
+        <input type="text" id="signup-username" placeholder="Username" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button onclick="handleSignup()">Signup</button>
+      </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content" id="main-content">
+      <h1>🌀 Welcome to Al Ounani</h1>
+      <p>Learn how to master the power of Gmala and become Ounani.</p>
+
+      <div class="button-group">
+        <button onclick="showInfo('gmala')">Press Here to Learn More</button>
+        <button onclick="showInfo('ounani')">Who is Ounani</button>
+      </div>
+
+      <!-- Gmala Info Section -->
+      <div class="info-section" id="gmala-info">
+        <h2>✨ The Secrets of Gmala</h2>
+        <p>Gmala is not just a word... it's a way of life.</p>
+        <ul>
+          <li>🫠 Unfunny jokes</li>
+          <li>Ounani malekes</li>
+          <li>🫡 Advanced gmala techniques (level 7+)</li>
+          <li>Saying "Ha rani na3ref!" every 3 minutes</li>
+        </ul>
+        <p>Warning: once you learn gmala... you can never unlearn it. 🤫</p>
+      </div>
+
+      <!-- Ounani Info Section -->
+      <div class="info-section" id="ounani-info">
+        <h2>🧠 Who is Ounani</h2>
+        <p>Ounani is a strong, 1.65-meter-tall force of annoyance and confidence. He proudly rocks a ponytail, like a mini anime boss, and wears the gandoura — the traditional Islamic prayer outfit — like he’s about to either pray... or roast you mid-dua.</p>
+        <p>He's a math student, currently battling the final boss of high school: the BAC exams. He studies like a monk, but roasts like a gremlin with unlimited energy.</p>
+        <p>Ounani also has a deep love for Sonic the Hedgehog — fast, chaotic, blue, and full of attitude. Basically, Sonic is his spirit animal.</p>
+        <p>He is not just a person. He is a vibe. A confusing, loud, unfunny vibe.</p>
+        <img src="476945612_3852354615080957_7173090648346086361_n.jpg" alt="Ounani Image">
+      </div>
+
+      <!-- Comment Section -->
+      <div class="comment-section">
+        <h3>💬 What questions do you have about Ounani?</h3>
+        <input type="text" id="comment-input" class="comment-box" placeholder="Type your comment here...">
+        <button class="comment-button" onclick="postComment()">Post Comment</button>
+        <div class="comments-display" id="comments-display">
+          <!-- Comments will appear here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Check if user is already logged in
+    window.onload = function() {
+      if (localStorage.getItem('loggedInUser')) {
+        document.getElementById('auth-container').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        loadComments();
+      }
+    };
+
+    // Handle Signup
+    function handleSignup() {
+      const username = document.getElementById('signup-username').value.trim();
+      const password = document.getElementById('signup-password').value.trim();
+
+      if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+      }
+
+      if (localStorage.getItem(username)) {
+        alert('Username already exists. Please choose another one.');
+        return;
+      }
+
+      localStorage.setItem(username, password);
+      localStorage.setItem('loggedInUser', username);
+      alert('Signup successful!');
+      document.getElementById('auth-container').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      loadComments();
+    }
+
+    // Handle Login
+    function handleLogin() 
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+
+      if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+      }
+
+      const storedPassword = localStorage.getItem(username);
+      if (storedPassword && storedPassword === password) 
+        localStorage.setItem('loggedInUser', username);
+        alert('Login successful!');
+        document.getElementById('auth-container').style.display = 'none';
+       
+::contentReference[oaicite:0]{index=0}
+ 
